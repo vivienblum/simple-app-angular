@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core"
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms"
 import { ArticleService } from "../services/article.service"
+import { Article } from "../models/article"
 
 @Component({
   selector: "app-article-creation",
@@ -21,13 +22,11 @@ export class ArticleCreationComponent implements OnInit {
   createArticle() {
     const formModel = this.articleForm.value
     const newArticle = {
-      title : formModel.title,
-      content : formModel.content,
-      author : formModel.author,
+      title: formModel.title,
+      content: formModel.content,
+      author: formModel.author
     }
-    this.articleService.add(newArticle).subscribe(() => {
-      console.log("coucou")
-    })
+    this.articleService.add(newArticle).subscribe()
   }
 
   ngOnInit() {}

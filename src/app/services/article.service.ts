@@ -22,7 +22,7 @@ export class ArticleService {
     )
   }
 
-  public add(article: any): Observable<any> {
+  public add(article: any): Observable<Article> {
     return this.http.post<Article>(
       `http://localhost:3000/articles/`,
       article
