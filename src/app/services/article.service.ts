@@ -14,4 +14,8 @@ export class ArticleService {
   public delete(id:number):Observable<any>{
     return this.http.delete<any>(`http://localhost:3000/articles/${id}`)
   }
+
+  public update(id:number, article:Article):Observable<any>{
+    return this.http.put<Article>(`http://localhost:3000/articles/${id}`, article)
+  }
 }
