@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core"
+import { Article } from "../models/article"
 
 @Component({
   selector: "app-articles",
@@ -6,12 +7,18 @@ import { Component, OnInit } from "@angular/core"
   styleUrls: ["./articles.component.css"]
 })
 export class ArticlesComponent implements OnInit {
-  articles = [
-    { title: "toto", content: "tto", author: "" },
-    { title: "toto", content: "tto", author: "" }
-  ]
+  private _articles: Article[]
 
-  constructor() {}
+  constructor() {
+    this._articles = [
+      { title: "toto", content: "tto", author: "" },
+      { title: "toto", content: "tto", author: "" }
+    ]
+  }
+
+  public articles() {
+    return this._articles
+  }
 
   ngOnInit() {}
 }
