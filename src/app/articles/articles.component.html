@@ -2,6 +2,9 @@
   <div class="articles-title">
     <h2>Liste des articles</h2>
   </div>
+  <a class="btn btn-primary" routerLink="/" role="button">
+    Back
+  </a>
   <div class="articles-body">
     <div *ngFor="let article of this.articles() | async">
       <app-article *ngIf="this.articleId() == 0 || article.id == this.articleId()" [article]="article" (deletedArticle)="delete($event)" (updatedArticle)="update($event)">
