@@ -2,7 +2,7 @@
   "articles": [
     {
       "id": 2,
-      "title": "Toto",
+      "title": "Totosd",
       "content": "bar",
       "author": "foo"
     },
@@ -65,6 +65,18 @@
       "content": "srfrsf",
       "author": "Vivien",
       "id": 12
+    },
+    {
+      "title": "title",
+      "content": "cocntntntne",
+      "author": "eeie",
+      "id": 13
+    },
+    {
+      "title": "Alexis",
+      "content": "Alexis",
+      "author": "Alexis",
+      "id": 14
     }
   ]
 }

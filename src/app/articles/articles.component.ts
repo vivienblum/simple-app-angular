@@ -39,7 +39,7 @@ export class ArticlesComponent implements OnInit {
     })
   }
 
-  update(article: Article) {
+  update(article: any) {
     this.articleService.update(article).subscribe(() => {
       this._articles = this.articleService.getArticles()
     })
