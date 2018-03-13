@@ -12,7 +12,7 @@ import { ArticleService } from "./services/article.service"
 import { ArticleCreationComponent } from "./article-creation/article-creation.component"
 
 const appRoutes: Routes = [
-  /*  { path: 'create', component: ArticleCreationComponent },*/
+  { path: 'create', component: ArticleCreationComponent },
   { path: "articles", component: ArticlesComponent },
   { path: "articles/:id", component: ArticleComponent },
   { path: "", component: ArticlesComponent }

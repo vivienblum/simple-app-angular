@@ -36,5 +36,6 @@ export class ArticleComponent implements OnInit {
     console.log(title)
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }
