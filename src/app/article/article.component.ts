@@ -22,6 +22,5 @@ export class ArticleComponent implements OnInit {
   // public author(): string {
   //   return this._author
   // }
-
   ngOnInit() {}
 }
