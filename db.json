@@ -2,9 +2,9 @@
   "articles": [
     {
       "id": 2,
-      "title": "Angular component",
-      "content": "Angular component looks awesome!",
-      "authors": "Orangefire"
+      "title": "Toto",
+      "content": "bar",
+      "author": "foo"
     },
     {
       "id": 3,
