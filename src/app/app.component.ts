@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Article } from "./models/article"
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  @Output() refreshArticle: EventEmitter<Article> = new EventEmitter()
+
+  addArticle(article: Article) {
+    console.log(article)
+    this.refreshArticle.emit(article)
+  }
 }
