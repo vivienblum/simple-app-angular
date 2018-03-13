@@ -19,6 +19,7 @@ export class ArticleComponent implements OnInit {
   }
 
   update() {
+    console.log(this)
     this.updatedArticle.emit(this.article)
   }
 
