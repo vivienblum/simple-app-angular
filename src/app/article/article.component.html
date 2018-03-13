@@ -1,6 +1,6 @@
 <div *ngIf="!this.edit()" class="card">
   <div class="card-header">
-      <h4 class="card-title">{{this.article.title}}</h4>
+      <a href='articles/{{this.article.id}}'><h4 class="card-title">{{this.article.title}}</h4></a>
   </div>
   <div class="card-body">
     <p class="card-text">{{this.article.content}}</p>

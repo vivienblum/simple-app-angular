@@ -4,7 +4,7 @@
   </div>
   <div class="articles-body">
     <div *ngFor="let article of this.articles() | async">
-      <app-article  *ngIf="this.articleId() == 0 || article.id == this.articleId()" [article]="article" (deletedArticle)="delete($event)" (updatedArticle)="update($event)">
+      <app-article *ngIf="this.articleId() == 0 || article.id == this.articleId()" [article]="article" (deletedArticle)="delete($event)" (updatedArticle)="update($event)">
       </app-article>
     </div>
   </div>
