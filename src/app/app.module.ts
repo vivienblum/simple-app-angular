@@ -9,13 +9,14 @@ import { ArticleComponent } from "./article/article.component"
 import { ArticlesComponent } from "./articles/articles.component"
 import { ArticleService } from "./services/article.service"
 
-import { ArticleCreationComponent } from "./article-creation/article-creation.component"
+import { ArticleCreationComponent } from "./article-creation/article-creation.component";
+import { HomeComponent } from './home/home.component'
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
   { path: "articles", component: ArticlesComponent },
   { path: "articles/:id", component: ArticlesComponent },
-  { path: "", component: ArticlesComponent }
+  { path: "", component: HomeComponent }
 ]
 
 @NgModule({
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     ArticleComponent,
     ArticlesComponent,
-    ArticleCreationComponent
+    ArticleCreationComponent,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot(
