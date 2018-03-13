@@ -6,7 +6,7 @@
     Back
   </a>
   <form [formGroup]="searchForm">
-    <input class="form-control" formControlName="search">
+    <input class="form-control" formControlName="search" placeholder="Search article">
   </form>
   <div class="articles-body">
     <div *ngFor="let article of this.articles() | async | searchArticle:this.getSearch() ">

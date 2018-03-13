@@ -8,6 +8,12 @@ import { Article } from "../models/article"
 export class FilterPipe implements PipeTransform {
   transform(articles: Article[], filter: string): Article[] {
     if (articles === null) return []
-    return articles.filter(article => article.title.indexOf(filter) >= 0)
+    filter = filter.toLowerCase()
+    return articles.filter(
+      article =>
+        (article.title && article.content.toLowerCase().includes(filter)) ||
+        (article.content && article.content.toLowerCase().includes(filter)) ||
+        (article.author && article.author.toLowerCase().includes(filter))
+    )
   }
 }
