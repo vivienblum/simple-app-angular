@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser"
 import { NgModule } from "@angular/core"
+import { HttpClientModule } from "@angular/common/http"
 
 import { AppComponent } from "./app.component"
 import { ArticleComponent } from "./article/article.component"
@@ -8,7 +9,7 @@ import { ArticleService } from "./services/article.service"
 
 @NgModule({
   declarations: [AppComponent, ArticleComponent, ArticlesComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [ArticleService],
   bootstrap: [AppComponent]
 })
