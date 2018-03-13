@@ -1,7 +1,14 @@
-<div class="article">
-  <h3 contenteditable="true">{{this.article.title}}</h3>
+<div *ngIf="!this.edit()" class="article">
+  <h3>{{this.article.title}}</h3>
   <p contenteditable="true">{{this.article.content}}</p>
   <p contenteditable="true">{{this.article.author}}</p>
+  <button (click)="delete()">Supprimer</button>
+  <button (click)="handleEdit()">Editer</button>
+</div>
+<div *ngIf="this.edit()" class="article">
+  <input (change)="setTitle()" type="text" value={{this.article.title}} />
+  <input type="text" value={{this.article.content}}/>
+  <input type="text" value={{this.article.author}}/>
   <button (click)="delete()">Supprimer</button>
   <button (click)="update()">Update</button>
 </div>

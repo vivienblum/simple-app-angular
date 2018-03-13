@@ -12,15 +12,28 @@ export class ArticleComponent implements OnInit {
   @Output() deletedArticle: EventEmitter<Article> = new EventEmitter()
   @Output() updatedArticle: EventEmitter<Article> = new EventEmitter()
 
+  private _edit : boolean = false
+
   constructor() {}
+
+  handleEdit() {
+    this._edit = !this._edit
+  }
+
+  edit() {
+    return this._edit
+  }
 
   delete() {
     this.deletedArticle.emit(this.article)
   }
 
   update() {
-    console.log(this)
     this.updatedArticle.emit(this.article)
+  }
+
+  setTitle(title:string) {
+    console.log(title)
   }
 
   ngOnInit() {}
