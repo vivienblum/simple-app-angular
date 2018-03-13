@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core"
 import { Article } from "../models/article"
 import { ArticleService } from "../services/article.service"
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from "@angular/router"
 import { Observable } from "rxjs/Observable"
 
 @Component({
@@ -12,11 +12,23 @@ import { Observable } from "rxjs/Observable"
 export class ArticlesComponent implements OnInit {
   private _articles: Observable<Article[]>
   private _articleId: number
+  private _search: string = ""
 
-  constructor(private articleService: ArticleService, private route: ActivatedRoute) {}
+  constructor(
+    private articleService: ArticleService,
+    private route: ActivatedRoute
+  ) {}
 
   articles(): Observable<Article[]> {
     return this._articles
+  }
+
+  getSearch(): string {
+    return this._search
+  }
+
+  setSearch(search: string) {
+    this._search = search
   }
 
   articleId(): number {
@@ -24,11 +36,11 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._articleId = 0;
-    this._articles = this.articleService.getArticles();
-    this.route.params.subscribe( params => {
-      if (params && params['id']){
-        this._articleId = params['id'];
+    this._articleId = 0
+    this._articles = this.articleService.getArticles()
+    this.route.params.subscribe(params => {
+      if (params && params["id"]) {
+        this._articleId = params["id"]
       }
     })
   }
