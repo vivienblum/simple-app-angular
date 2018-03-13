@@ -26,4 +26,10 @@ export class ArticlesComponent implements OnInit {
       this._articles = this.articleService.getArticles()
     })
   }
+
+  update(article: Article) {
+    this.articleService.update(article).subscribe(() => {
+      this._articles = this.articleService.getArticles()
+    })
+  }
 }
