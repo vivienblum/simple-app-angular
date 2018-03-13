@@ -5,7 +5,7 @@ import { HttpClientModule } from "@angular/common/http"
 import { AppComponent } from "./app.component"
 import { ArticleComponent } from "./article/article.component"
 import { ArticlesComponent } from "./articles/articles.component"
-import { ArticleService } from "./services/article.service"
+import { ArticleService } from "./services/article.service";
 
 @NgModule({
   declarations: [AppComponent, ArticleComponent, ArticlesComponent],

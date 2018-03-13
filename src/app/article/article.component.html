@@ -1,7 +1,13 @@
-<div class="article">
-  <h3 contenteditable="true">{{this.article.title}}</h3>
-  <p contenteditable="true">{{this.article.content}}</p>
-  <p contenteditable="true">{{this.article.author}}</p>
-  <button (click)="delete()">Supprimer</button>
-  <button (click)="update()">Update</button>
+<div class="card">
+  <div class="card-header">
+      <h4 class="card-title" contenteditable="true">{{this.article.title}}</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text" contenteditable="true">{{this.article.content}}</p>
+    <blockquote contenteditable="true"><small class="text-muted">{{this.article.author}}</small></blockquote>
+    <div class="buttons">
+      <button (click)="delete()" type="button" class="btn btn-danger" title="Supprimer l'article">Supprimer</button>
+      <button (click)="update()" type="button" class="btn btn-info" title="Modifier l'article">Update</button>
+    </div>
+  </div>
 </div>
