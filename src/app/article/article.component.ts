@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core"
+import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms"
 import { Article } from "../models/article"
 
 @Component({
@@ -13,8 +14,9 @@ export class ArticleComponent implements OnInit {
   @Output() updatedArticle: EventEmitter<Article> = new EventEmitter()
 
   private _edit : boolean = false
+  articleForm: FormGroup
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   handleEdit() {
     this._edit = !this._edit
@@ -28,10 +30,22 @@ export class ArticleComponent implements OnInit {
     this.deletedArticle.emit(this.article)
   }
 
-  update() {
-    this.updatedArticle.emit(this.article)
+  editArticle() {
+    const formModel = this.articleForm.value
+    const newArticle = {
+      id: this.article.id,
+      title: formModel.title,
+      content: formModel.content,
+      author: formModel.author
+    }
+    this.updatedArticle.emit(newArticle)
   }
 
   ngOnInit() {
+    this.articleForm = this.fb.group({
+      title: [this.article.title, Validators.required],
+      content: [this.article.content, Validators.required],
+      author: [this.article.author, Validators.required]
+    })
   }
 }

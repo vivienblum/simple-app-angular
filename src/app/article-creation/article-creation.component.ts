@@ -11,7 +11,6 @@ import { Article } from "../models/article"
 })
 export class ArticleCreationComponent implements OnInit {
   articleForm: FormGroup
-  private edit: boolean = false
 
   constructor(private fb: FormBuilder, private articleService: ArticleService, private router: Router) {
     this.articleForm = this.fb.group({
