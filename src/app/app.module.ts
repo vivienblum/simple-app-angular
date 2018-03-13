@@ -14,7 +14,7 @@ import { ArticleCreationComponent } from "./article-creation/article-creation.co
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
   { path: "articles", component: ArticlesComponent },
-  { path: "articles/:id", component: ArticleComponent },
+  { path: "articles/:id", component: ArticlesComponent },
   { path: "", component: ArticlesComponent }
 ]
 
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserModule,
     HttpClientModule,
