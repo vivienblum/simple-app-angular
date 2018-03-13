@@ -32,10 +32,6 @@ export class ArticleComponent implements OnInit {
     this.updatedArticle.emit(this.article)
   }
 
-  setTitle(title:string) {
-    console.log(title)
-  }
-
   ngOnInit() {
   }
 }
