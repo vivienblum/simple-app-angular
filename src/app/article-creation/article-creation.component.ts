@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms"
+import { Router } from "@angular/router"
 import { ArticleService } from "../services/article.service"
 import { Article } from "../models/article"
 
@@ -10,11 +11,10 @@ import { Article } from "../models/article"
 })
 export class ArticleCreationComponent implements OnInit {
   articleForm: FormGroup
-  @Output() addedArticle: EventEmitter<Article> = new EventEmitter()
 
-  constructor(private fb: FormBuilder, private articleService: ArticleService) {
+  constructor(private fb: FormBuilder, private articleService: ArticleService, private router: Router) {
     this.articleForm = this.fb.group({
-      title: ["Fake title", Validators.required],
+      title: ["", Validators.required],
       content: ["", Validators.required],
       author: ["", Validators.required]
     })
@@ -28,7 +28,7 @@ export class ArticleCreationComponent implements OnInit {
       author: formModel.author
     }
     this.articleService.add(newArticle).subscribe((article)=>{
-      this.addedArticle.emit(article)
+      this.router.navigate(['articles'])
     })
   }
 
