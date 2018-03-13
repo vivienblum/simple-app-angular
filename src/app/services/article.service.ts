@@ -21,4 +21,11 @@ export class ArticleService {
       article
     )
   }
+
+  public add(article: any): Observable<any> {
+    return this.http.post<Article>(
+      `http://localhost:3000/articles/`,
+      article
+    )
+  }
 }
