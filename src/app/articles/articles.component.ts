@@ -13,6 +13,7 @@ export class ArticlesComponent implements OnInit {
   private _articles: Observable<Article[]>
   private _articleId: number
   private _search: string = ""
+  filterargs = {}
 
   constructor(
     private articleService: ArticleService,
