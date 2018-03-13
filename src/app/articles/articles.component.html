@@ -1,2 +1,2 @@
-<app-article *ngFor="let article of this.articles() | async" [article]="article">
+<app-article *ngFor="let article of this.articles() | async" [article]="article" (deletedArticle)="delete($event)">
 </app-article>
