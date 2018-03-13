@@ -20,4 +20,10 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
     this._articles = this.articleService.getArticles()
   }
+
+  delete(article: Article) {
+    this.articleService.delete(article.id).subscribe(() => {
+      this._articles = this.articleService.getArticles()
+    })
+  }
 }

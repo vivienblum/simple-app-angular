@@ -10,4 +10,8 @@ export class ArticleService {
   public getArticles(): Observable<Article[]> {
     return this.http.get<Article[]>("http://localhost:3000/articles")
   }
+
+  public delete(id:number):Observable<any>{
+    return this.http.delete<any>(`http://localhost:3000/articles/${id}`)
+  }
 }
