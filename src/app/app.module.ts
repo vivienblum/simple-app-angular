@@ -8,12 +8,13 @@ import { AppComponent } from "./app.component"
 import { ArticleComponent } from "./article/article.component"
 import { ArticlesComponent } from "./articles/articles.component"
 import { ArticleService } from "./services/article.service"
+import { FilterPipe } from "./shared/filter-pipe"
 
-import { ArticleCreationComponent } from "./article-creation/article-creation.component";
-import { HomeComponent } from './home/home.component'
+import { ArticleCreationComponent } from "./article-creation/article-creation.component"
+import { HomeComponent } from "./home/home.component"
 
 const appRoutes: Routes = [
-  { path: 'create', component: ArticleCreationComponent },
+  { path: "create", component: ArticleCreationComponent },
   { path: "articles", component: ArticlesComponent },
   { path: "articles/:id", component: ArticlesComponent },
   { path: "", component: HomeComponent }
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     ArticleComponent,
     ArticlesComponent,
     ArticleCreationComponent,
-    HomeComponent
+    HomeComponent,
+    FilterPipe
   ],
   imports: [
     RouterModule.forRoot(

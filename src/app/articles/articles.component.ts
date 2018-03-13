@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core"
+import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms"
 import { Article } from "../models/article"
 import { ArticleService } from "../services/article.service"
 import { ActivatedRoute } from "@angular/router"
@@ -12,23 +13,24 @@ import { Observable } from "rxjs/Observable"
 export class ArticlesComponent implements OnInit {
   private _articles: Observable<Article[]>
   private _articleId: number
-  private _search: string = ""
+  searchForm: FormGroup
 
   constructor(
     private articleService: ArticleService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private fb: FormBuilder
+  ) {
+    this.searchForm = this.fb.group({
+      search: [""]
+    })
+  }
 
   articles(): Observable<Article[]> {
     return this._articles
   }
 
   getSearch(): string {
-    return this._search
-  }
-
-  setSearch(search: string) {
-    this._search = search
+    return this.searchForm.value.search
   }
 
   articleId(): number {
