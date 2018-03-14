@@ -1,14 +1,12 @@
+<app-nav></app-nav>
 <div class="articles">
   <div class="articles-title">
     <h2>Liste des articles</h2>
   </div>
-  <a class="btn btn-primary" routerLink="/" role="button">
-    Back
-  </a>
-  <form [formGroup]="searchForm">
-    <input class="form-control" formControlName="search" placeholder="Search article">
-  </form>
   <div class="articles-body">
+    <form *ngIf="this.articleId() == 0" [formGroup]="searchForm">
+      <input class="form-control" formControlName="search" placeholder="Search article">
+    </form>
     <div *ngFor="let article of this.articles() | async | searchArticle:this.getSearch() ">
       <app-article *ngIf="this.articleId() == 0 || article.id == this.articleId()" [article]="article" (deletedArticle)="delete($event)" (updatedArticle)="update($event)">
       </app-article>

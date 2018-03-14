@@ -13,20 +13,19 @@
 </div>
 <div *ngIf="this.edit()" class="card">
   <form [formGroup]="articleForm" (ngSubmit)="editArticle()">
-    <div class="form-group">
-      <label class="center-block">title:
-        <input class="form-control" formControlName="title">
-      </label>
-      <br />
-      <label class="center-block">content:
-        <textarea class="form-control" formControlName="content"></textarea>
-      </label>
-      <br />
-      <label class="center-block">author:
-        <input class="form-control" formControlName="author">
-      </label>
-      <br />
-      <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Save</button>
+    <div class="card-header form-group">
+        <input class="form-control" formControlName="title" id="title" placeholder="Titre">
+    </div>
+    <div class="card-body">
+      <div class="form-group row">
+        <textarea rows="4" class="form-control" formControlName="content" id="content" placeholder="Contenu"></textarea>
+      </div>
+      <div class="form-group row">
+        <input class="form-control" formControlName="author" id="author" placeholder="Auteur">
+      </div>
+      <div class="buttons">
+        <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Sauvegarder</button>
+      </div>
     </div>
   </form>
 </div>

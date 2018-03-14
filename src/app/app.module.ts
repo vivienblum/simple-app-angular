@@ -11,7 +11,8 @@ import { ArticleService } from "./services/article.service"
 import { FilterPipe } from "./shared/filter-pipe"
 
 import { ArticleCreationComponent } from "./article-creation/article-creation.component"
-import { HomeComponent } from "./home/home.component"
+import { HomeComponent } from "./home/home.component";
+import { NavComponent } from './nav/nav.component'
 
 const appRoutes: Routes = [
   { path: "create", component: ArticleCreationComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     ArticlesComponent,
     ArticleCreationComponent,
     HomeComponent,
-    FilterPipe
+    FilterPipe,
+    NavComponent
   ],
   imports: [
     RouterModule.forRoot(

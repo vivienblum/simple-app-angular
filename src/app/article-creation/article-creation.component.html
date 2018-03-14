@@ -1,21 +1,29 @@
-<h3>Create your article</h3>
-<form [formGroup]="articleForm" (ngSubmit)="createArticle()">
-  <div class="form-group">
-    <label class="center-block">title:
-      <input class="form-control" formControlName="title">
-    </label>
-    <br />
-    <label class="center-block">content:
-      <textarea class="form-control" formControlName="content"></textarea>
-    </label>
-    <br />
-    <label class="center-block">author:
-      <input class="form-control" formControlName="author">
-    </label>
-    <br />
-    <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Save</button>
+<app-nav></app-nav>
+<div class="create">
+  <div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Ecrire un article</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="articleForm" (ngSubmit)="createArticle()">
+        <div class="form-group row">
+          <label for="title" class="col-sm-1 col-form-label">Titre</label>
+          <div class="col-sm-11">
+            <input class="form-control" formControlName="title" id="title" placeholder="Titre">
+          </div>
+          <label for="content" class="col-sm-1 col-form-label">Contenu</label>
+          <div class="col-sm-11">
+            <textarea rows="4" class="form-control" formControlName="content" id="content" placeholder="Contenu"></textarea>
+          </div>
+          <label for="auhor" class="col-sm-1 col-form-label">Auteur</label>
+          <div class="col-sm-11">
+            <input class="form-control" formControlName="author" id="author" placeholder="Auteur">
+          </div>
+          <div class="col-sm-12 buttons">
+            <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Sauvegarder</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-</form>
-<a class="btn btn-primary" routerLink="/" role="button">
-  Back
-</a>
+</div>
