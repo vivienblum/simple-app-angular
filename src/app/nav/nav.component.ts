@@ -13,9 +13,11 @@ export class NavComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    if (this.route.url && this.route.url.value && this.route.url.value.length > 0 && this.route.url.value[0].path){
-      this._url = this.route.url.value[0].path;
-    }
+    this.route.url.subscribe(url => {
+      if (url && url.length > 0 && url[0].path){
+        this._url = url[0].path;
+      }
+    });
   }
 
   url(): string {
